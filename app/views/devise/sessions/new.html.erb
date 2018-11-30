@@ -1,0 +1,51 @@
+<div class="login-background">
+
+  <div class="row">
+    <div class="login-page-container">
+
+      <div class="col-lg-offset-1 col-lg-5">
+        <span class="login-tsubuyaki-title"> #Tsubuyakiへようこそ</span>
+        <p class="login-tsubuyaki-content"> 友達や魅力的な人々とつながって、興味のある最新情報を見つけましょう。そして、いま起きているできごとを様々な角度から見てみましょう。</p>
+      </div>
+
+      <div class="col-lg-offset-1 col-lg-4">
+        <div class="login-container">
+          <p class="login-login-title">&emsp;&emsp;ログインする<br><br></p>
+
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <div class="row">
+            <div class="col-lg-offset-1 col-lg-10">
+
+              <div class="field">
+                <label class="control-label" for="inputEmail">Email</label>
+                <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", id:"inputEmail", placeholder:"メールアドレスを入力" %>
+              </div>
+              <br>
+              <div class="field">
+                <label class="control-label" for="inputEmail">パスワード</label>
+                <%= f.password_field :password, autocomplete: "off", class:"form-control", id:"inputEmail",placeholder:"パスワードを入力" %>
+              </div>
+              <br>
+                <% if devise_mapping.rememberable? -%>
+                    <div class="checkbox">
+                      <label class="control-label">
+                        <input type="checkbox">Remember
+                      </label>
+                    </div>
+                <% end -%>
+            </div>
+            </div>
+              <br>
+            <div class="row">
+              <div class="col-lg-offset-7 col-lg-4">
+                <%= f.submit "ログイン", class:"btn btn-block login-login-button" %>
+                <% end %>
+              </div>
+            </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>

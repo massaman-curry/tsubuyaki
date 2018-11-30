@@ -1,0 +1,31 @@
+<div class="background-container-small">
+	<div class="tweet-detail">
+		<div class="row">
+			<div class='col-lg-offset-3 col-lg-6'>
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<span class="show_user_name">
+							&emsp;Tsubuyakiの編集画面
+						</span>
+						<p><br></p>
+						<div class="edit_form_container">
+							<%= form_for(@post) do |f| %>
+							<div class="row">
+								<div class="col-lg-offset-1 col-lg-10">
+									<%= f.text_area :content, class:"form-control" %>
+								</div>
+							</div>
+							<p><br></p>
+							<div class="row">
+								<div class="col-lg-offset-10">
+									<%= f.submit '編集完了', class: "btn btn-twitter-color btn-xs" %>
+								<% end %>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

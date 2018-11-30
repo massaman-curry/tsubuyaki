@@ -1,0 +1,500 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+ @import "font-awesome-sprockets";
+ @import "font-awesome";
+
+
+/* ====header==== */
+body{
+	padding-top: 50px;
+}
+.navbar{
+    background-color: #ffffff;
+    border-color: rgb(172,177,180);
+    height: 50px;
+}
+.menu_content{
+	line-height: 50px;
+	text-align: center;
+	font-size: 15px;
+	color: #666666;
+}
+.menu_hover:hover{
+	color: rgb(42,163,239);
+}
+.menu_content_container3:hover{
+	height: 50px;
+	background-color: #ff0000;
+}
+.menu_3:hover{
+	color: #ffffff;
+}
+.logo_font{
+	line-height: 60px;
+	color: rgb(42,163,239);
+}
+.logo_font:hover{
+	color: rgb(80,180,242);
+}
+.navbar-left{
+	line-height: 55px;
+	position: relative;
+}
+.top-twitter-logo{
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+}
+.header_profile_circle_wrapper{
+	height: 40px;
+	width: 40px;
+	margin-top: 5px;
+	border-radius: 50%;
+	background-color: #000000;
+}
+.header_profile_circle{
+	height: 40px;
+	width: 40px;
+	border: solid 1px #bababa;
+	border-radius: 50%;
+}
+.menu_content_container4_wrapper{
+	height: 50px;
+}
+.menu_content_container4{
+	margin-top: 5px;
+	position: absolute;
+	width: 100%;
+	height: 40px;
+	border-radius: 20px;
+	background-color: rgb(80,180,242);
+}
+.menu_content_container4:hover{
+	background-color: rgb(42,163,239)
+}
+.menu_4{
+	line-height: 40px;
+	text-align: center;
+	font-size: 15px;
+	color: #ffffff;
+}
+.container{
+	width: 90%
+}
+.navbar-right{
+	line-height: 55px;
+}
+
+/* ====index==== */
+
+.body{
+	height: 100px
+}
+.btn-twitter-color{
+	background-color: rgb(80,180,242);
+	color: #ffffff;
+	border: none;
+}
+.btn-twitter-color:hover{
+	color: #ffffff;
+	background-color: rgb(42,163,239);
+}
+.user-information-counter{
+	list-style-type: none;
+}
+.background-container{
+	height: 100%;
+	background-color: rgb(230,236,240)
+}
+.index_profile_wrapper{
+	padding-left: 10px;
+}
+.indext_image_circle{
+	width: 80px;
+	height: 80px;
+	border: solid 1px #eaeaea;
+	border-radius: 50%;
+}
+.current_user_name{
+	color: #444444;
+	font-size: 25px;
+	font-weight: 600;
+}
+.counter-title{
+	text-align: center;
+	font-size: 12px;
+	font-weight: 500;
+	color: #666666;
+}
+.counter-number{
+	text-align: center;
+	font-size: 22px;
+	font-weight: 600;
+	color: rgb(42,163,239);
+}
+.new_post_title{
+	font-size: 17px;
+	font-weight: 600;
+	color: #666666;
+}
+.ad_title{
+	font-size: 18px;
+}
+.index_post_user_photo{
+	width: 40px;
+	height: 40px;
+	border: solid 1px #5a5a5a;
+	border-radius: 50%;
+}
+
+.panel-link{
+	position: relative;
+}
+.panel-link:hover{
+	opacity: 0.5;
+}
+.panel-link a{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.tweet_user_name{
+	color: #555555;
+	font-size: 20px;
+	font-weight: 600;
+	margin-left: 0px;
+}
+.tweet_content{
+	font-size: 16px;
+}
+.my-gray{
+	color: rgb(135,149,159)
+}
+.star_blink:hover{
+	color: #edb918;
+}
+.index_user_title{
+	font-size: 20px;
+	font-weight: 600;
+	color: #555555;
+}
+.index_user_name_container{
+	height: 70px;
+	border-bottom: solid 1px rgb(230,236,240);
+}
+.index_user_name_container:hover{
+	background-color: rgb(244,247,249);
+}
+.index_user_photo{
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background-color: black;
+}
+.index_user_photo_circle{
+	width: 40px;
+	height: 40px;
+	border: solid 1px #eaeaea;
+	border-radius: 50%;
+}
+.index_user_name{
+	font-size: 18px;
+	font-weight: 600;
+	color: #555555;
+}
+.my-blue{
+	color: rgb(80,184,242);
+}
+.show_link:hover{
+	color: rgb(42,163,239);
+}
+.my-yellow{
+	color: #edb918
+}
+.panel_width{
+	width: 90%;
+}
+.copyright{
+	font-size: 12px;
+}
+
+/* ====show==== */
+.background-container-small{
+	height: 100vh;
+	background-color: rgb(230,236,240);
+}
+.favorite-message{
+	padding-top: 30px;
+}
+#notice-fav{
+	color: #edb918;
+	font-size: 15px;
+}
+.tweet-detail{
+	padding-top: 30px;
+}
+.show_post_image_circle_wrapper{
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	background-color: black;
+}
+.show_post_image_circle{
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+}
+.show_user_name{
+	font-size: 30px;
+	font-weight: 500;
+}
+.show_tweet_content{
+	font-size: 40px;
+	font-weight: 300;
+}
+.show_option_menu{
+	text-align: center;
+}
+.trash-can-blink:hover{
+	color: #ff0000;
+}
+.edit-blink:hover{
+	color: rgb(80,180,242);
+}
+
+/* ====new==== */
+.new_tsubuyaki_submit_title_container{
+	height: 50px;
+	border-top: 2px solid rgb(42,163,239);
+	border-left: 2px solid rgb(42,163,239);
+	border-right: 2px solid rgb(42,163,239);
+	border-bottom: 1px solid rgb(196,226,244);
+	border-radius: 10px 10px 0px 0px;
+	background-color: #ffffff;
+}
+.new_tsubuyaki_submit_title{
+	text-align: center;
+	font-size: 18px;
+	font-weight: 600;
+	line-height: 50px;
+}
+.new_tsubuyaki_submit_body_container{
+	height: 150px;
+	border-left: 2px solid rgb(42,163,239);
+	border-right: 2px solid rgb(42,163,239);
+	border-bottom: 2px solid rgb(42,163,239);
+	border-radius: 0px 0px 10px 10px;
+	background-color: rgb(233,246,253);
+}
+.form_container{
+	width: 100%;
+	margin-top: 30px;
+}
+
+/* ====login==== */
+.login-background{
+	height: 100vh;
+	width: 100vw;
+	background-image:url(/images/login_back.jpg);
+	background-size: cover;
+}
+.login-page-container{
+	padding-top: 50px;
+}
+.login-tsubuyaki-title{
+	color: #ffffff;
+	font-size: 40px;
+}
+.login-tsubuyaki-content{
+	padding-top: 30px;
+	color: #ffffff;
+	font-size: 20px;
+}
+.login-container{
+	background-color: rgba(0, 0, 0, 0.5);
+	height: 500px;
+}
+.login-login-title{
+	padding-top: 30px;
+	margin-left: 10px;
+	font-weight: 500;
+	font-size: 25px;
+	font-weight: 500;
+	color: white;
+}
+.control-label{
+	color: #ffffff;
+}
+.login-login-button{
+	text-decoration: none;
+	background-color: rgb(80,180,242);
+	color: #ffffff;
+	border-bottom: solid 4px rgb(62,134,179);
+	border-radius: 3px;
+}
+.login-login-button:hover{
+	color: #ffffff;
+	transform: translateY(4px);
+	border-bottom: none;
+}
+
+/* ====sign_up==== */
+.sign_up_background{
+	height: 100vh;
+	width: 100vw;
+	background-image:url(/images/sign_up_back.jpg);
+	background-size: cover;
+}
+.control-label-password{
+	color: #ffffff;
+	font-size: 10px;
+}
+
+/* ====user_show==== */
+
+.user_show_head_frame{
+	position: relative;
+	height: 80px;
+}
+.show_users_image_circle_wrapper{
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	background-color: black;
+}
+.show_users_image_circle{
+	width: 80px;
+	height: 80px;
+	border: solid 1px #eaeaea;
+	border-radius: 50%;
+}
+.user_show_user_name{
+	text-align: center;
+	font-size: 45px;
+	font-weight: 600;
+}
+.user_show_profile_edit_wrapper{
+	position: absolute;
+	margin-top: 20px;
+	height: 40px;
+	width: 170px;
+	border: solid 1px rgb(102,117,126);
+	border-radius: 20px;
+}
+.user_show_profile_edit_wrapper:hover{
+	background-color: rgba(102,117,126,0.1);
+}
+.user_show_profile_edit{
+	color: rgb(102,117,126);
+	text-align: center;
+	line-height: 40px;
+	font-size: 15px;
+	text-decoration: none;
+}
+.user_show_profile{
+	height: 100px;
+}
+.user_show_profile_content{
+	font-size: 18px;
+}
+.user_show_tsubuyaki_count_title{
+	font-size: 13px;
+	text-align: center;
+}
+.user_show_tsubuyaki_count{
+	font-size: 25px;
+	color: rgb(42,163,239);
+	text-align: center;
+}
+.user_show_tsubuyaki_title{
+	color: #888888;
+	font-size: 30px;
+	font-weight: 600;
+}
+.users_show_new_title{
+	color: rgba(85,181,240,0.5);
+	font-size: 100px;
+	font-weight: 700;
+	text-align: center;
+}
+.user_show_tsubuyaki_content_container{
+}
+.users_show_tsubuyaki_content_frame{
+	margin-bottom: 0px;
+}
+.users_show_tsubuyaki_content{
+	height: 150px;
+}
+.users_show_tsubuyaki_content_letter{
+	padding-top: 15px;
+	font-size: 30px;
+}
+.users_show_tsubuyaki_content_bar{
+	margin: 0 auto;
+	width: 30px;
+	height: 70px;
+	background-color: rgba(85,181,240,0.5);
+}
+
+.circle{
+	margin: 0 auto;
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	background-color: rgb(85,181,240)
+}
+.circle:hover{
+	background-color: rgb(42,163,239)
+}
+.circle-font{
+	text-decoration: none;
+	text-align: center;
+	line-height: 80px;
+	color: #ffffff;
+	font-size: 25px;
+}
+/* ====user_edit==== */
+.users_edit_title{
+	font-size: 30px;
+	font-weight: 600;
+}
+.user_edit_image_circle{
+	border-radius: 50%;
+}
+.profile_edit_name{
+	font-size: 100%;
+}
+.users_show_form textarea {
+	resize: none;
+	width: 100%;
+	height: 200px;
+}
+.custom-1{
+	border-radius: 20px;
+	border-color: rgb(42,163,239);
+	color: rgb(42,163,239);
+}
+.custom-1:hover{
+	border-color: rgb(80,180,242);
+	background-color: rgb(80,180,242);
+	color: #ffffff;
+}
+

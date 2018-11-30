@@ -1,0 +1,39 @@
+<div class="background-container-small">
+	<div class="row">
+		<div class="col-lg-offset-3 col-lg-6">
+			<h1><br></h1>
+			<div class="row">
+			<div class="col-lg-12">
+				<div class="new_tsubuyaki_submit_container">
+			 	 <div class="new_tsubuyaki_submit_title_container">
+			 	 	<p class="new_tsubuyaki_submit_title">新しいつぶやき</p>
+			 	 </div>
+			 	 <div class="new_tsubuyaki_submit_body_container">
+			 	 	<div class="row">
+			 	 	<div class="col-lg-offset-2 col-lg-8">
+			 	 		<div class="form-group">
+						 <%= form_for(@post) do |f| %>
+						<div class="form_container">
+						 <%= f.text_area :content, :maxlength=>"140", class:"form-control", placeholder:"なにしてるなう？" %>
+						</div>
+						<br>
+						<div class="row">
+						<div class="col-lg-offset-11">
+						 <%= f.submit 'つぶやく',class: "btn btn-twitter-color btn-xs" %>
+						 <% end %>
+						</div>
+						</div>
+						</div>
+					</div>
+					</div>
+				 </div>
+				</div>
+			</div>
+			</div>
+		</div>
+	 </div>
+
+	 <div class="col-lg-3">
+	 </div>
+	</div>
+</div>

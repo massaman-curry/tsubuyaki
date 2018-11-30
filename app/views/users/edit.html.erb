@@ -1,0 +1,100 @@
+<div class="background-container">
+	<br>
+	<div class="row">
+		<div class="col-lg-offset-1 col-lg-10">
+			<p class="users_edit_title">プロフィールを編集</p>
+		</div>
+	</div>
+	<br>
+	<div class="row">
+		<div class="col-lg-offset-2 col-lg-8">
+			<div class="panel panel-default">
+			<div class="panel-body">
+				<br>
+				<div class="row users_show_form">
+					<div class="col-lg-offset-2 col-lg-8">
+					<div class="form-group has-icon">
+
+
+						<%= form_for(@user) do |f| %>
+						<div class="user_edit_image">
+							<%= attachment_image_tag @user, :profile_image, :fill, 100, 100, class: "user_edit_image_circle" %>
+						</div>
+						<br>
+						<label for="inputEmail">アイコン画像：</label>
+						<%= f.attachment_field :profile_image, placeholder:"プロフィール画像" %>
+
+					<br>
+						<%= f.label :name, 'ユーザー名：' %>
+						<%= f.text_field :name,  class:"form-control" %>
+					<br>
+						<%= f.label :profile, 'プロフィール：' %>
+						<%= f.text_area :profile, class:"form-control" %>
+					<br>
+					<br>
+
+					<div class="row">
+						<div class="col-lg-offset-8 col-lg-4">
+							<%= f.submit '変更を保存', class:"btn btn-default btn-block custom-1" %>
+						</div>
+					</div>
+						<% end %>
+
+					</div>
+			 		</div>
+				</div>
+				<hr>
+				<div class="row">
+					<div class="col-lg-offset-2 col-lg-4">
+						<p class="user_show_tsubuyaki_count_title">つぶやき</p>
+					</div>
+					<div class="col-lg-4">
+						<p class="user_show_tsubuyaki_count_title">お気に入り</p>
+					</div>
+	 			</div>
+				<div class="row">
+					<div class="col-lg-offset-2 col-lg-4">
+						<p class="user_show_tsubuyaki_count"><%= @posts.count %> </p>
+					</div>
+					<div class="col-lg-4">
+						<p class="user_show_tsubuyaki_count"><%= @favorites.count %></p>
+					</div>
+				</div>
+			</div>
+			</div>
+		<span class="user_show_tsubuyaki_title">過去のつぶやき</span>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-lg-offset-3 col-lg-6">
+			<p class="users_show_new_title"> New</p>
+			<!-- ここから繰り返し -->
+			<% @posts.each do |post| %>
+			<div class="users_show_tsubuyaki_content_container">
+				<div class="panel-link">
+				 <div class="panel panel-default users_show_tsubuyaki_content_frame">
+					<div class="panel-body users_show_tsubuyaki_content">
+						<p class="users_show_tsubuyaki_content_letter">
+						&emsp;<%= post.content %></p>
+					</div>
+					<a href="#"><%= link_to post_path(post.id) do %>
+					<% end %>
+					</a>
+				 </div>
+				</div>
+					<div class="users_show_tsubuyaki_content_bar">
+					</div>
+			</div>
+			<% end %>
+			<!-- ここまでを繰り返し -->
+				<div class="circle">
+					<a class="circle-font" href="/posts/new">
+					<p class="circle-font">Start</p>
+					</a>
+				</div>
+			<br>
+			<br>
+		</div>
+	</div>
+</div>

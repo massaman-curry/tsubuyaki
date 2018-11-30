@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tsubuyaki</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  	<header class="navbar navbar-fixed-top">
+    <% if user_signed_in?%>
+      <div class="row">
+        <div class="col-lg-offset-1 col-lg-4">
+          <div class="row">
+            <a href="/posts">
+            <div class="col-lg-3">
+              <p class="menu_content menu_hover">
+                <i class="fas fa-home"></i> Home
+              </p>
+            </div>
+            </a>
+            <a href="#">
+            <%= link_to user_path(current_user.id) do %>
+            <div class="col-lg-3">
+              <p class="menu_content menu_hover">
+                <i class="fas fa-user"></i> You
+              </p>
+            </div>
+            <% end %>
+            </a>
+            <a data-method="delete" href="/users/sign_out">
+            <div class="col-lg-3 menu_content_container3">
+              <p class="menu_content menu_3">
+              <i class="fas fa-power-off"></i> Bye!
+              </p>
+            </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-2">
+          <div class="logo_container center-block">
+            <a href="#">
+             <p class="logo_font text-center"><i class="fas fa-flag-checkered fa-2x"></i></p>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="row">
+            <div class="col-lg-offset-7 col-lg-1">
+              <a href="#">
+              <%= link_to user_path(current_user.id) do %>
+              <div class="header_profile_circle_wrapper">
+                <%= attachment_image_tag current_user, :profile_image, :fill, 40, 40, class: "header_profile_circle", fallback:"no-image.jpg" %>
+              </div>
+              <% end %>
+              </a>
+            </div>
+            <div class="col-lg-offset-1 col-lg-2 menu_content_container4_wrapper">
+            <a href="/posts/new">
+              <div class="menu_content_container4">
+                <p class="menu_4">つぶやく</p>
+              </div>
+            </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <% else %>
+
+      <div class="row">
+        <div class="col-lg-offset-1 col-lg-4">
+          <div class="row">
+            <a href="#">
+            <div class="col-lg-4">
+              <p class="menu_content menu_hover">
+                Tsubuyakiとは？
+              </p>
+            </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-2">
+          <div class="logo_container center-block">
+            <a href="#">
+             <p class="logo_font text-center"><i class="fas fa-flag-checkered fa-2x"></i></p>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="row">
+            <a href="/users/sign_in">
+            <div class="col-lg-offset-6 col-lg-2">
+              <p class="menu_content menu_hover">ログイン</p>
+            </div>
+            </a>
+            <a href="/users/sign_up">
+            <div class="col-lg-offset-1 col-lg-2 menu_content_container4_wrapper">
+              <div class="menu_content_container4">
+                <p class="menu_4">SignUp</p>
+              </div>
+            </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+  	</header>
+    <%= yield %>
+  </body>
+
+</html>

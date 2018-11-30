@@ -1,0 +1,78 @@
+<div class="background-container-small">
+	<% flash.each do |name, msg| %>
+	<div class="alert alert-<%= name %>">
+		<a class="close" data-dismiss="alert">×</a>
+	    <%= msg %>
+	</div>
+	<% end %>
+
+	<div class="tweet-detail">
+	  <div class="row">
+		<div class='col-lg-offset-3 col-lg-6'>
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-lg-1">
+							<div class="show_post_image_circle_wrapper">
+								<%= attachment_image_tag @user, :profile_image, :fill, 50, 50, class: "show_post_image_circle", fallback:"no-image.jpg" %>
+							</div>
+						</div>
+						<div class="col-lg-10">
+					 		<span class="show_user_name">
+					 		&emsp;
+				 	 		<%= @user.name %>
+				 	 		</span>
+				 	 	</div>
+				 	</div>
+				 	 <div class="row">
+				 	 	<span><br></span>
+				 	 </div>
+				 	 <div class="show_tweet_content">
+				 	 	&emsp;
+					 	 <%= @post.content %>
+				 	 </div>
+				 	 	<span><br></span>
+				 	 	<hr>
+				 	 <div class="row">
+
+				 	 <% if @post.favorited_by?(current_user) %>
+				 	  <div class="col-lg-offset-8 col-lg-1">
+				 	  	<a href="#">
+				 	  		<%= link_to post_favorites_path(@post), method: :delete do %>
+				 	  		<i class="fas fa-star my-yellow"></i>
+				 	  		<% end %>
+				 	  	</a>
+				 	  </div>
+				 	  		<% else %>
+				 	  <div class="col-lg-offset-8 col-lg-1">
+				 	  	<a href="#">
+				 	  		<%= link_to post_favorites_path(@post), method: :post do %>
+				 	  		<i class="far fa-star my-gray star_blink"></i>
+				 	  		<% end %>
+				 	  	</a>
+				 	  </div>
+				 	  <% end %>
+
+				 	  <% if @post.user == current_user %>
+				 	  <div class="col-lg-1">
+				 	  	<a href="#">
+				 		 	<%= link_to post_path(@post), method: :delete do %>
+				 		 	<i class="far fa-trash-alt my-gray trash-can-blink"></i>
+				 		 	<% end %>
+				 		</a>
+				 	  </div>
+				 	  <div class="col-lg-1">
+				 	  	<a href="#">
+				 	  		<%= link_to edit_post_path(@post) do %>
+				 	  		<i class="far fa-edit my-gray edit-blink"></i>
+				 	 		<% end %>
+				 	 	</a>
+				 	 </div>
+				 	 <% end %>
+				 	 </div>
+				</div>
+			</div>
+		</div>
+	  </div>
+	</div>
+</div>

@@ -1,0 +1,155 @@
+<div class="background-container">
+	<% flash.each do |name, msg| %>
+	<div class="alert alert-<%= name %>">
+		<a class="close" data-dismiss="alert">×</a>
+	 	<%= msg %>
+	</div>
+	<% end %>
+	<div class="row">
+		<div class='col-lg-offset-1 col-lg-3'>
+			<span>  <br> </span>
+			<div class="panel panel-default">
+			 <div class="panel-body">
+			  	<div class="row index_profile_wrapper">
+			  		<%= attachment_image_tag @user, :profile_image, :fill, 80, 80, class: "indext_image_circle", fallback:"no-image.jpg" %>
+					<span class="current_user_name"> &emsp;<%= current_user.name %></span>
+				</div>
+				<span><br> </span>
+				<div class="row">
+			 		<div class='col-lg-4'>
+			 			<p class="counter-title">つぶやき</p><br>
+			 			<p class="counter-number">
+			 			 <%= @counta.count %>
+			 			</p>
+			 		</div>
+			 		<div class='col-lg-4'>
+			 			<p class="counter-title">お気に入り</p><br>
+			 			<p class="counter-number"><%= @countb.count %></p>
+			 		</div>
+			 		<div class='col-lg-4'>
+			 			<p class="counter-title">ユーザー数</p><br>
+			 			<p class="counter-number"><%= @users.count %></p>
+			 		</div>
+			  	</div>
+			<hr>
+
+			<p class="new_post_title">新しいつぶやき</p>
+			 <div class="form-group">
+				<%= form_for(@post) do |f| %>
+				<%= f.text_area :content, :maxlength=>"140", class:"form-control", placeholder:"なにしてるなう？" %>
+				<span><br></span>
+				<%= f.submit 'つぶやく', class: "btn btn-twitter-color btn-xs" %>
+				<% end %>
+			  </div>
+			 </div>
+			</div>
+
+			<div class="panel panel-default">
+				<div class="panel-body">
+			  	 <p class="ad_title">おすすめ</p>
+			  	 <br>
+			  	 <p class="ad_content">誰か広告出しませんか？「つぶやき」なら、広告掲載料0円です。</p>
+			  	</div>
+			</div>
+		</div>
+
+		<div class='col-lg-5'>
+			<span> <br></span>
+
+			<% @posts.each do |post| %>
+			<div class="panel panel-default">
+			 	<div class="panel-body">
+			 	 <div class="panel-link">
+			 	 	<div class="row">
+			 	 		<div class="col-lg-2">
+			 	 				<%= attachment_image_tag post.user, :profile_image, :fill, 40, 40, class: "index_post_user_photo", fallback:"no-image.jpg" %>
+			 	 		</div>
+			 	 		<div class="col-lg-6">
+				 			<span class="tweet_user_name">
+				 	  		<%= post.user.name %>
+				 			</span>
+				 		</div>
+				 	</div>
+				 	<br><br>
+				 	<span class="tweet_content">&emsp;
+					  <%= post.content %>
+					</span>
+				<hr>
+				 <a href="#"><%= link_to post_path(post.id) do %>
+				 	<% end %>
+				 </a>
+				 </div>
+					<div class="row">
+						<div class="col-lg-offset-7 col-lg-1">
+							<a href ="#">
+							  <%= link_to post_path(post.id), method: :get do %>
+							  <i class="fas fa-info-circle my-blue show_link"></i>
+							  <% end %>
+							</a>
+						</div>
+						<div class='col-lg-offset-1 col-lg-1'>
+
+						<% if post.favorited_by?(current_user)%>
+						 <a href="#">
+							<%= link_to post_favorites_path(post.id), method: :delete do %>
+							<i class="fas fa-star my-yellow"></i>
+							<% end %>
+						 </a>
+						<% else %>
+						 <a href="#">
+						 	<%= link_to post_favorites_path(post.id), method: :post do %>
+						 	<i class="far fa-star my-gray star_blink"></i>
+						 	<% end %>
+						 <% end %>
+
+						</div>
+					</div>
+			 	</div>
+			</div>
+			<% end %>
+		</div>
+
+		<div class='col-lg-3'>
+			<span><br></span>
+			<div class="panel_width">
+				<div class="panel panel-default">
+				 <div class="panel-body">
+				 	<p class="index_user_title">現在のユーザー&emsp;<i class="fas fa-users"></i>
+					</p>
+					<br>
+
+					<% @users.each do |user| %>
+					 <div class="panel-link">
+				 		<div class="index_user_name_container">
+				 		<br>
+				 			<div class="row">
+				 			<div class="col-lg-2">
+				 				<div class="index_user_photo">
+				 					<%= attachment_image_tag user, :profile_image, :fill, 5, 5, class: "index_user_photo_circle", fallback:"no-image.jpg" %>
+				 				</div>
+				 			</div>
+				 			<div class="col-lg-10">
+				 				<p class="index_user_name">
+								&emsp;<%= user.name %>
+				 				</p>
+				 			</div>
+				 			</div>
+				 		</div>
+				 		<a href="#"><%= link_to user_path(user.id) do %>
+				 		<% end %>
+				 		</a>
+				 	 </div>
+				 	<% end %>
+				 </div>
+				</div>
+			</div>
+			<div class="panel_width">
+				<div class="panel panel-default">
+				 <div class="panel-body">
+					<span class="copyright">Tsubuyakiについて<br>ヘルプセンター<br>規約<br>プライバシーポリシー<br>クッキー<br>広告について<br>Copyright © 2018 Masaru Miyachi All Rights Reserved.</span>
+				 </div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
